@@ -1,9 +1,11 @@
 import Header from "./components/MainPage/Header";
+import OrganicBackground from "./components/OrganicBackground";
 function App() {
 	return (
 		<>
+		<OrganicBackground />
 			<Header />
-			<h1 className="text-3xl font-bold underline font-mozilla">OH HELLO THERE</h1>
+			
 		</>
 	);
 }

@@ -10,14 +10,19 @@ html {
 	font-family: var(--font-inter);
 }
 
-html,
-body {
+#root {
 	height: 100%;
-	background: url("../public/images/BG.png") no-repeat center center fixed;
+	background: url("../public/images/BG.png");
 	background-size: contain;
 	position: relative;
 	isolation: isolate;
 	background-repeat: repeat;
 	background-position: center center;
 	background-attachment: fixed;
+	min-height: 100vh;
+	min-width: 100%;
+}
+html,
+body {
+	scroll-behavior: smooth;
 }
