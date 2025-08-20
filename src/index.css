@@ -6,3 +6,6 @@
 	--font-mozilla: "Mozilla Headline", sans-serif;
 }
 
+html {
+	font-family: var(--font-inter);
+}
