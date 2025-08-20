@@ -15,22 +15,21 @@ function Header() {
 				className="
           p-3
           flex flex-wrap items-center justify-center
-           mx-auto
-           sticky top-5 
-           min-h-12
+          mx-auto
+          sticky top-5 
+          min-h-12
 
-           max-w-[80%]
+          max-w-[80%]
          
-          bg-gradient-to-b from-[hsla(158,30%,85%,0.3)] to-[hsla(158,30%,75%,0.2)]
+          bg-gradient-to-b from-[#0A1913]/30 to-[#0A1913]/20  /* Dark glass effect */
 
-          backdrop-blur-md backdrop-saturate-150
+          backdrop-blur-lg  backdrop-saturate-150
 
-          
-          border border-[#b8d8cd66]
+          border border-[#7DA896]/40 
 
           rounded-md
           
-          shadow-lg shadow-[#a8c8bd]/40
+          shadow-lg shadow-[#A8D8C0]/10  
         ">
 				<NavBar />
 			</motion.div>
