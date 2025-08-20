@@ -14,5 +14,10 @@ html,
 body {
 	height: 100%;
 	background: url("../public/images/BG.png") no-repeat center center fixed;
-	background-size: cover;
+	background-size: contain;
+	position: relative;
+	isolation: isolate;
+	background-repeat: repeat;
+	background-position: center center;
+	background-attachment: fixed;
 }
