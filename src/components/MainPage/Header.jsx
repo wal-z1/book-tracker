@@ -1,5 +1,5 @@
 import NavBar from "../Util/NavBar";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 function Header() {
 	return (
@@ -21,15 +21,15 @@ function Header() {
 
           max-w-[80%]
          
-          bg-gradient-to-b from-[#0A1913]/30 to-[#0A1913]/20  /* Dark glass effect */
+          bg-gradient-to-b from-[#131823]/30 to-[#131823]/20  /* Dark glass effect */
 
           backdrop-blur-lg  backdrop-saturate-150
 
-          border border-[#7DA896]/40 
+          border border-[#313B4A]/40 
 
           rounded-md
           
-          shadow-lg shadow-[#A8D8C0]/10  
+          shadow-lg shadow-[#58A6FF]/10  
         ">
 				<NavBar />
 			</motion.div>

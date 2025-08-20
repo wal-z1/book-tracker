@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 function NavBar() {
 	return (
@@ -9,8 +9,8 @@ function NavBar() {
 				whileHover={{ scale: 1.05, rotate: 4 }}
 				whileTap={{ scale: 0.95 }}
 				transition={{ type: "spring", stiffness: 400, damping: 17 }}
-				className="font-outfit capitalize font-extrabold rounded-xl p-2 border-2 border-[#A8D8C0] shadow-lg shadow-[#A8D8C0]/20">
-				<span className="text-[#EBF9F1]">Books Tracker</span> {/* Light text */}
+				className="font-outfit capitalize font-extrabold rounded-xl p-2 border-2 border-[#58A6FF] shadow-lg shadow-[#58A6FF]/20">
+				<span className="text-[#F0F6FC]">Books Tracker</span> {/* Light text */}
 			</motion.div>
 		</>
 	);
