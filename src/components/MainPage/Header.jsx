@@ -4,17 +4,20 @@ function Header() {
 			<div
 				className="
           
-          min-w-full sticky top-0 h-12
+           mx-auto
+           sticky top-5 h-12
+
+           w-[90%]
+         
+          bg-gradient-to-t from-[hsla(153,27%,10%,0.2)] to-[hsla(148,39%,20%,0.2)]
 
          
-          bg-gradient-to-t from-[hsl(151,32%,60%)] to-[hsl(150,46%,77%)]
-
-         
-          bg-opacity-75 backdrop-blur-md backdrop-saturate-150
+          backdrop-blur-sm backdrop-saturate-150
 
           
-          border-b border-y-[#2e5241a8]
+          border-b border-y-[#55806ba8]
 
+          rounded-md
           
           shadow-lg shadow-black/20
         "></div>
