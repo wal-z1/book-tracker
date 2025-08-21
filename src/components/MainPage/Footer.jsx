@@ -13,9 +13,12 @@ function Footer() {
         text-[#F0F6FC] text-sm
         absolute bottom-0 z-40
       ">
-
-			<span className="tracking-wide">© 2025 Reading Tracker</span>
-
+			<span className="tracking-wide">
+				© 2025 Reading Tracker &#9;
+				<span className="tracking-wide font-extralight">
+					&#9; a small book tracking website
+				</span>
+			</span>
 			<div className="flex gap-x-4">
 				<motion.a
 					href="https://github.com/wal-z1/book-tracker"
