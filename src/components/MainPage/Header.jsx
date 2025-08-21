@@ -5,21 +5,26 @@ function Header() {
 	return (
 		<>
 			<motion.div
-				initial={{ opacity: 0, y: -20 }}
+				initial={{ opacity: 0, y: -12 }}
 				animate={{
 					opacity: 1,
 					y: 0,
-					transition: { type: "spring", stiffness: 300 },
+					transition: {
+						duration: 0.8,
+						type: "spring",
+						stiffness: 400,
+						damping: 20,
+					},
 				}}
-				whileTap={{ scale: 0.985 }}
+				whileHover={{ backgroundColor: "rgba(0,0,0,0.2)" }}
 				className="
           p-3
-          flex flex-wrap items-center justify-center
+          flex flex-wrap items-center justify-evenly
           mx-auto
-          sticky top-5 
+          sticky 
           min-h-12
-
-          max-w-[80%]
+					w-screen
+          
          
           bg-gradient-to-b from-[#131823]/30 to-[#131823]/20  /* Dark glass effect */
 
