@@ -4,11 +4,11 @@ function AddBook() {
 	return (
 		<motion.div
 			whileHover={{
-				scale: 1.08,
+				scale: 1.03,
 			}}
-			whileTap={{ scale: 0.95 }}
+			whileTap={{ scale: 0.99 }}
 			className="
-        font-inter capitalize font-extrabold rounded-sm px-10 py-4
+        font-inter capitalize font-extrabold rounded-xl px-10 py-4
         border-2 border-[#58A6FF]
         shadow-md shadow-[#58A6FF]/20
         cursor-pointer w-fit
