@@ -18,7 +18,7 @@ function Home() {
         w-full max-w-5xl mx-auto
         px-4 sm:px-6
       ">
-			<AddBook />
+			<AddBook onClick={BookMenu} />
 
 			<CurrentlyState book={book} />
 

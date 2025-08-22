@@ -2,12 +2,13 @@ import { motion } from "framer-motion";
 
 function AddBook() {
 	return (
-		<motion.div
-			whileHover={{
-				scale: 1.03,
-			}}
-			whileTap={{ scale: 0.99 }}
-			className="
+		<button>
+			<motion.div
+				whileHover={{
+					scale: 1.03,
+				}}
+				whileTap={{ scale: 0.99 }}
+				className="
 			text-center
         font-inter capitalize font-extrabold rounded-xl px-10 py-4
         border-2 border-[#3869a1]
@@ -19,8 +20,9 @@ function AddBook() {
         relative 
          top-12
       ">
-			<span className="text-[#F0F6FC] text-center">➕ add a new book</span>
-		</motion.div>
+				<span className="text-[#F0F6FC] text-center">➕ add a new book</span>
+			</motion.div>
+		</button>
 	);
 }
 
