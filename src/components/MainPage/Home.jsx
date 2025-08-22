@@ -4,6 +4,7 @@ import Twogrid from "../Util/Twogrid";
 import { useState } from "react";
 import Modal from "../Util/Modal_pop";
 import PopCard from "../Util/Popcard";
+import CloseButton from "../Util/CloseButton";
 import { motion, AnimatePresence } from "framer-motion";
 function Home() {
 	// book object
@@ -25,7 +26,7 @@ function Home() {
 
 			<Modal open={open1} onclosefun={() => Sopen1(false)}>
 				<PopCard>
-					{" "}
+					<CloseButton onClick={() => Sopen1(false)} />
 					<span>actual menu</span>
 				</PopCard>
 			</Modal>

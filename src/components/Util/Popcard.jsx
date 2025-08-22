@@ -10,7 +10,7 @@ function PopCard({ children, open }) {
         p-6 
         w-[400px] max-w-[90%]
         text-[#F0F6FC]
-       
+        relative
       `}>
 			{children}
 		</div>
