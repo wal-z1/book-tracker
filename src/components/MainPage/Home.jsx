@@ -1,7 +1,11 @@
-import AddBook from "../Util/AddBook"
-function Home(){
-return(
-<AddBook/>
-);
+import AddBook from "../Util/AddBook";
+import CurrentlyState from "../Util/CurrentlyState";
+function Home() {
+	return (
+		<>
+			<AddBook />
+      <CurrentlyState/>
+		</>
+	);
 }
-export default Home 
+export default Home;
