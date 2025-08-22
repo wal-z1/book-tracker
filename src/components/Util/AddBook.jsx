@@ -9,8 +9,9 @@ function AddBook() {
 			whileTap={{ scale: 0.99 }}
 			className="
         font-inter capitalize font-extrabold rounded-xl px-10 py-4
-        border-2 border-[#58A6FF]
+        border-2 border-[#3869a1]
         shadow-md shadow-[#58A6FF]/20
+				bg-[#1a2638]
         cursor-pointer w-fit
         text-4xl
         mx-auto

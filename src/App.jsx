@@ -7,7 +7,7 @@ function App() {
 		<>
 			<OrganicBackground />
 			<Header />
-			<Home/>
+			<Home />
 			<Footer />
 		</>
 	);
