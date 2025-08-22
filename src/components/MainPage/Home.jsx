@@ -3,6 +3,7 @@ import CurrentlyState from "../Util/CurrentlyState";
 import Twogrid from "../Util/Twogrid";
 import { useState } from "react";
 import Modal from "../Util/Modal_pop";
+import PopCard from "../Util/Popcard";
 function Home() {
 	// book object
 	const [book, setBook] = useState({
@@ -21,7 +22,10 @@ function Home() {
       ">
 			<AddBook onClick={() => Sopen1(true)} />
 			<Modal open={open1} onclosefun={() => Sopen1(false)}>
-				<span>actual menu</span>
+				<PopCard>
+					{" "}
+					<span>actual menu</span>
+				</PopCard>
 			</Modal>
 			<CurrentlyState book={book} />
 
