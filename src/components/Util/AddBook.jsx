@@ -3,27 +3,21 @@ import { motion } from "framer-motion";
 function AddBook() {
 	return (
 		<motion.div
-			initial={{ opacity: 0, y: -20, filter: "blur(5px)" }}
-			animate={{
-				opacity: 1,
-				y: 0,
-				filter: "blur(0px)",
-				transition: { duration: 0.5 },
-			}}
 			whileHover={{
 				scale: 1.08,
-				rotate: 3,
-				boxShadow: "0 0 15px rgba(88,166,255,0.5)",
 			}}
 			whileTap={{ scale: 0.95 }}
-			transition={{ type: "spring", stiffness: 350, damping: 18 }}
 			className="
-        font-outfit capitalize font-extrabold rounded-lg px-4 py-2
+        font-inter capitalize font-extrabold rounded-sm px-10 py-4
         border-2 border-[#58A6FF]
         shadow-md shadow-[#58A6FF]/20
-        mx-2 cursor-pointer
+        cursor-pointer w-fit
+        text-4xl
+        mx-auto
+        relative 
+         top-12
       ">
-			<span className="text-[#F0F6FC]">📚 Reading Tracker</span>
+			<span className="text-[#F0F6FC]">➕ add a new book</span>
 		</motion.div>
 	);
 }
