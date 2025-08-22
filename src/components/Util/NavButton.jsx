@@ -3,19 +3,21 @@ import { motion } from "framer-motion";
 function Navbutton({ text }) {
 	return (
 		<motion.div
-			initial={{ opacity: 0, y: 20 }}
+			initial={{ opacity: 0, y: 10 }}
 			animate={{ opacity: 1, y: 0 }}
-			whileHover={{ scale: 1.05, y: -2 }}
+			whileHover={{ scale: 1.07, y: -1 }}
 			whileTap={{ scale: 0.95 }}
-			transition={{ type: "spring", stiffness: 350, damping: 18 }}
+			transition={{ type: "spring", stiffness: 300, damping: 20 }}
 			className="
-        font-inter capitalize font-medium px-4 py-2 mx-1.5
-        rounded-md border border-[#648dbb] 
-        shadow-inner shadow-[#1E2C3D]/80
+        font-inter text-sm sm:text-base capitalize font-medium
+        px-3 sm:px-4 py-1.5 sm:py-2
+        rounded-md border border-[#3B6A99]
+        shadow-inner shadow-[#1E2C3D]/60
         text-[#F0F6FC] tracking-wide
         transition-colors duration-200
-				cursor-pointer	
-      ">
+        cursor-pointer
+      "
+		>
 			{text}
 		</motion.div>
 	);
