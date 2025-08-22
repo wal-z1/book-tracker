@@ -2,7 +2,7 @@ import AddBook from "../Util/AddBook";
 import CurrentlyState from "../Util/CurrentlyState";
 import Twogrid from "../Util/Twogrid";
 import { useState } from "react";
-
+import Modal from "../Util/Modal_pop";
 function Home() {
 	// book object
 	const [book, setBook] = useState({
@@ -11,6 +11,7 @@ function Home() {
 		totalPages: undefined,
 	});
 
+	const [open1, Sopen1] = useState(false);
 	return (
 		<div
 			className="
@@ -18,8 +19,10 @@ function Home() {
         w-full max-w-5xl mx-auto
         px-4 sm:px-6
       ">
-			<AddBook onClick={BookMenu} />
-
+			<AddBook onClick={() => Sopen1(true)} />
+			<Modal open={open1} onclosefun={() => Sopen1(false)}>
+				<span>actual menu</span>
+			</Modal>
 			<CurrentlyState book={book} />
 
 			<Twogrid />

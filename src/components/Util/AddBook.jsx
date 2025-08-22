@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
-function AddBook() {
+function AddBook({ onClick }) {
 	return (
-		<button>
+		<button onClick={onClick}>
 			<motion.div
 				whileHover={{
 					scale: 1.03,
