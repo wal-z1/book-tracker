@@ -4,6 +4,7 @@ import Twogrid from "../Util/Twogrid";
 import { useState } from "react";
 import Modal from "../Util/Modal_pop";
 import PopCard from "../Util/Popcard";
+import { motion, AnimatePresence } from "framer-motion";
 function Home() {
 	// book object
 	const [book, setBook] = useState({
@@ -21,12 +22,14 @@ function Home() {
         px-4 sm:px-6
       ">
 			<AddBook onClick={() => Sopen1(true)} />
+
 			<Modal open={open1} onclosefun={() => Sopen1(false)}>
 				<PopCard>
 					{" "}
 					<span>actual menu</span>
 				</PopCard>
 			</Modal>
+
 			<CurrentlyState book={book} />
 
 			<Twogrid />
