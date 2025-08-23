@@ -15,13 +15,13 @@ function Header() {
 					damping: 22,
 				},
 			}}
-			whileHover={{ backgroundColor: "rgba(0,0,0,0.15)" }}
 			className="
-       flex flex-wrap items-center justify-center sm:justify-evenly mx-auto sticky z-50
+        flex flex-wrap items-center justify-center sm:justify-evenly
+        mx-auto sticky top-0 z-50
         min-h-12 w-screen rounded-md
         bg-gradient-to-b from-[#131823]/30 to-[#131823]/20
         backdrop-blur-lg backdrop-saturate-150
-        border border-t-[#313B4A]/40 
+        border-b border-b-[#313B4A]/40
         shadow-lg shadow-[#58A6FF]/10
       ">
 			<NavBar />
