@@ -29,7 +29,7 @@ function HomePage() {
 			<Modal open={open1} onclosefun={() => Sopen1(false)}>
 				<PopCard>
 					<CloseButton onClick={() => Sopen1(false)} />
-					<BookMenu />
+					<BookMenu book={book} />
 				</PopCard>
 			</Modal>
 
