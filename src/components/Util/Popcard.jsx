@@ -1,4 +1,3 @@
-import { motion, AnimatePresence } from "framer-motion";
 
 function PopCard({ children, open }) {
 	return (

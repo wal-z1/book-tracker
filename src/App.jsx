@@ -1,7 +1,7 @@
-import Header from "./components/MainPage/Header";
-import OrganicBackground from "./components/OrganicBackground";
-import Footer from "./components/MainPage/Footer";
-import Home from "./components/MainPage/Home";
+import Header from "./components/layout/Header";
+import OrganicBackground from "./components/layout/OrganicBackground";
+import Footer from "./components/layout/Footer";
+import Home from "./pages/HomePage";
 function App() {
 	return (
 		<>
