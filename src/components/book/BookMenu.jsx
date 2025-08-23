@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 export default function BookMenu({ setBook, SetLibrary, close }) {
-	const [title, setTitle] = useState("");
-	const [pages, setPages] = useState("");
-	const [author, setAuthor] = useState("");
+	const [title, setTitle] = useState("No Book");
+	const [pages, setPages] = useState(0);
+	const [author, setAuthor] = useState("Someone");
 	const Save = () => {
 		const newBook = {
 			title,
