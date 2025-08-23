@@ -3,7 +3,7 @@ function CloseButton({ onClick }) {
 		<button
 			onClick={onClick}
 			className="
-        absolute top-3 right-3
+        absolute top-2 right-2
         w-8 h-8 flex items-center justify-center
         rounded-full
         bg-[#313B4A] text-[#F0F6FC]

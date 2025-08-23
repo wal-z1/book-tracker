@@ -1,12 +1,12 @@
-import { motion, AnimatePresence } from "framer-motion";
 
-function PopCard({ children, open }) {
+function PopCard({ children }) {
 	return (
 		<div
 			className={`
          border-2 border-[hsl(212,80%,30%)]
         bg-[#313B4A] 
         rounded-2xl 
+        
         p-6 
         w-[400px] max-w-[90%]
         text-[#F0F6FC]
