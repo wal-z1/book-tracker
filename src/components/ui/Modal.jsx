@@ -7,7 +7,7 @@ function Modal({ open, onclosefun, children }) {
 				<>
 					<motion.div
 						onClick={onclosefun}
-						className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-[3px] backdrop-brightness-75"
+						className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-[3px] backdrop-brightness-75 backdrop-saturate-150"
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}

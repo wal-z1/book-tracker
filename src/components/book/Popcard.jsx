@@ -4,13 +4,14 @@ function PopCard({ children, open }) {
 	return (
 		<div
 			className={`
-        bg-[#1a2638] 
+         border-2 border-[hsl(212,80%,30%)]
+        bg-[#313B4A] 
         rounded-2xl 
-        shadow-lg shadow-black/40 
         p-6 
         w-[400px] max-w-[90%]
         text-[#F0F6FC]
         relative
+         shadow-lg shadow-[#58A6FF]/15
       `}>
 			{children}
 		</div>

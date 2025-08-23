@@ -5,9 +5,9 @@ function NavBar() {
 	return (
 		<header
 			className="
-        w-full bg-[#0D1117]/80 backdrop-blur-md
+        w-full  
         
-        shadow-md shadow-black/20
+        
       ">
 			<div
 				className="

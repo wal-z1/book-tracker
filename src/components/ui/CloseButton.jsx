@@ -1,20 +1,19 @@
 function CloseButton({ onClick }) {
-  return (
-    <button
-      onClick={onClick}
-      className="
+	return (
+		<button
+			onClick={onClick}
+			className="
         absolute top-3 right-3
         w-8 h-8 flex items-center justify-center
         rounded-full
-        bg-[#1a2638] text-[#F0F6FC]
+        bg-[#313B4A] text-[#F0F6FC]
         cursor-pointer
         hover:scale-110
         transition-transform
-      "
-    >
-      ✕
-    </button>
-  );
+      ">
+			✕
+		</button>
+	);
 }
 
 export default CloseButton;
