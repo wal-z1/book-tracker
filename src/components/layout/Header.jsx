@@ -1,4 +1,4 @@
-import NavBar from "../navigation/NavBar";
+import NavBar from "../ui/NavBar";
 import { motion } from "framer-motion";
 
 function Header() {

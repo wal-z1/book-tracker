@@ -1,17 +1,14 @@
-
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 
 import AddBook from "../components/book/AddBook";
 import CurrentlyState from "../components/book/CurrentlyState";
-import PopCard from "../components/book/Popcard"; 
-import Modal from "../components/common/Modal";
-import CloseButton from "../components/common/CloseButton";
+import PopCard from "../components/book/Popcard";
+import Modal from "../components/ui/Modal";
+import CloseButton from "../components/ui/CloseButton";
 import TwoGrid from "../components/layout/TwoGrid";
-
-function HomePage() { 
-	
+import BookMenu from "../components/book/BookMenu";
+function HomePage() {
 	const [book, setBook] = useState({
 		title: "No Book",
 		currentPage: 0,
@@ -31,13 +28,12 @@ function HomePage() {
 			<Modal open={open1} onclosefun={() => Sopen1(false)}>
 				<PopCard>
 					<CloseButton onClick={() => Sopen1(false)} />
-					<span>actual menu</span>
+					<BookMenu />
 				</PopCard>
 			</Modal>
 
 			<CurrentlyState book={book} />
 
-		
 			<TwoGrid />
 		</div>
 	);
