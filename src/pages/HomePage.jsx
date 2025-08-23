@@ -29,7 +29,11 @@ function HomePage() {
 			<Modal open={open1} onclosefun={() => Sopen1(false)}>
 				<PopCard>
 					<CloseButton onClick={() => Sopen1(false)} />
-					<BookMenu setBook={setBook} SetLibrary={SetLibrary} />
+					<BookMenu
+						setBook={setBook}
+						SetLibrary={SetLibrary}
+						close={() => Sopen1(false)}
+					/>
 				</PopCard>
 			</Modal>
 

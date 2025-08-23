@@ -1,4 +1,6 @@
-export default function BookMenu({ setBook, SetLibrary }) {
+import { useState } from "react";
+
+export default function BookMenu({ setBook, SetLibrary, close }) {
 	const [title, setTitle] = useState("");
 	const [pages, setPages] = useState("");
 	const [author, setAuthor] = useState("");
@@ -12,6 +14,7 @@ export default function BookMenu({ setBook, SetLibrary }) {
 
 		setBook(newBook); // update current book
 		SetLibrary((prev) => [...prev, newBook]); // add to library
+		close();
 	};
 
 	const input =
