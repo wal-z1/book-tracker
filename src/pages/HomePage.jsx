@@ -9,17 +9,6 @@ import CloseButton from "../components/ui/CloseButton";
 import TwoGrid from "../components/layout/TwoGrid";
 import BookMenu from "../components/book/BookMenu";
 function HomePage() {
-	const [Library, SetLibrary] = useState([]);
-	const [book, setBook] = useState({
-		title: "No Book",
-		author: "Someone",
-		currentPage: 0,
-		totalPages: undefined,
-	});
-
-	const [open1, Sopen1] = useState(false);
-	console.log(Library);
-
 	return (
 		<>
 			<Header />

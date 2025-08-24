@@ -7,6 +7,16 @@ import { Analytics } from "@vercel/analytics/react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
+	const [Library, SetLibrary] = useState([]);
+	const [book, setBook] = useState({
+		title: "No Book",
+		author: "Someone",
+		currentPage: 0,
+		totalPages: undefined,
+	});
+
+	const [open1, Sopen1] = useState(false);
+	console.log(Library);
 	return (
 		<>
 			<OrganicBackground />
