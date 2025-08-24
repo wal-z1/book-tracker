@@ -4,42 +4,46 @@ import BookMenu from "../book/BookMenu";
 import CloseButton from "../ui/CloseButton";
 import Modal from "../ui/Modal";
 import PopCard from "../book/Popcard";
+import { useBookContext } from "../../pages/BookContext";
 
-function NavBar({ open2, setOpen2, setBook, setLibrary }) {
-	return (
-		<header className="w-full">
-			<div
-				className="
+function NavBar() {
+  const { open2, setOpen2, setBook, setLibrary } = useBookContext();
+
+  return (
+    <header className="w-full">
+      <div
+        className="
           max-w-6xl mx-auto flex flex-wrap
           items-center justify-between gap-3 px-6 py-3
-        ">
-				<LogoButton />
+        "
+      >
+        <LogoButton />
 
-				<nav className="flex flex-wrap items-center gap-2 sm:gap-3">
-					{/* NavBar Add Book button */}
-					<button onClick={() => setOpen2(true)}>
-						<Navbutton text="Add Book" />
-					</button>
+        <nav className="flex flex-wrap items-center gap-2 sm:gap-3">
+          {/* NavBar Add Book button */}
+          <button onClick={() => setOpen2(true)}>
+            <Navbutton text="Add Book" />
+          </button>
 
-					{/* Modal for NavBar add book */}
-					<Modal open={open2} onclosefun={() => setOpen2(false)}>
-						<PopCard>
-							<CloseButton onClick={() => setOpen2(false)} />
-							<BookMenu
-								setBook={setBook}
-								setLibrary={setLibrary}
-								close={() => setOpen2(false)}
-							/>
-						</PopCard>
-					</Modal>
+          {/* Modal for NavBar add book */}
+          <Modal open={open2} onclosefun={() => setOpen2(false)}>
+            <PopCard>
+              <CloseButton onClick={() => setOpen2(false)} />
+              <BookMenu
+                setBook={setBook}
+                setLibrary={setLibrary}
+                close={() => setOpen2(false)}
+              />
+            </PopCard>
+          </Modal>
 
-					<Navbutton text="Library" />
-					<Navbutton text="Stats" />
-					<Navbutton text="Settings" />
-				</nav>
-			</div>
-		</header>
-	);
+          <Navbutton text="Library" />
+          <Navbutton text="Stats" />
+          <Navbutton text="Settings" />
+        </nav>
+      </div>
+    </header>
+  );
 }
 
 export default NavBar;

@@ -1,19 +1,14 @@
-import { useState } from "react";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import { motion } from "framer-motion";
+import { useBookContext } from "./BookContext";
 
-function Library({ library, setLibrary, book, setBook }) {
-	const [open2, setOpen2] = useState(false);
+function Library() {
+	const { library } = useBookContext();
 
 	return (
 		<>
-			<Header
-				open2={open2}
-				setOpen2={setOpen2}
-				setBook={setBook}
-				setLibrary={setLibrary}
-			/>
+			<Header />
 
 			<div className="flex flex-col items-center justify-center min-h-[70vh] gap-6 px-6 text-[#F0F6FC] font-outfit">
 				<motion.div
