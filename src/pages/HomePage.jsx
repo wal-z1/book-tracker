@@ -10,43 +10,38 @@ import BookMenu from "../components/book/BookMenu";
 import { useBookContext } from "./BookContext";
 
 function HomePage() {
-  const { open1, setOpen1, book, setBook, setLibrary } = useBookContext();
+	const { open1, setOpen1, book } = useBookContext();
 
-  return (
-    <>
-      <Header />
+	return (
+		<>
+			<Header />
 
-      <div
-        className="
+			<div
+				className="
           flex flex-col gap-20 items-center mt-10
           w-full max-w-5xl mx-auto
           px-4 sm:px-6
-        "
-      >
-        {/* the add book button (page-level) */}
-        <AddBook onClick={() => setOpen1(true)} />
+        ">
+				{/* the add book button (page-level) */}
+				<AddBook onClick={() => setOpen1(true)} />
 
-        {/* modal for page add book */}
-        <Modal open={open1} onclosefun={() => setOpen1(false)}>
-          <PopCard>
-            <CloseButton onClick={() => setOpen1(false)} />
-            <BookMenu
-              setBook={setBook}
-              setLibrary={setLibrary}
-              close={() => setOpen1(false)}
-            />
-          </PopCard>
-        </Modal>
+				{/* modal for page add book */}
+				<Modal open={open1} onclosefun={() => setOpen1(false)}>
+					<PopCard>
+						<CloseButton onClick={() => setOpen1(false)} />
+						<BookMenu close={() => setOpen1(false)} />
+					</PopCard>
+				</Modal>
 
-        {/* show current book */}
-        <CurrentlyState book={book} />
+				{/* show current book */}
+				<CurrentlyState book={book} />
 
-        {/* links */}
-        <TwoGrid />
-      </div>
-      <Footer />
-    </>
-  );
+				{/* links */}
+				<TwoGrid />
+			</div>
+			<Footer />
+		</>
+	);
 }
 
 export default HomePage;

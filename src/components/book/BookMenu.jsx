@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useBookContext } from "../../pages/BookContext";
 
-export default function BookMenu({ setBook, SetLibrary, close }) {
+export default function BookMenu({ close }) {
+	const { setBook, setLibrary } = useBookContext();
 	const [title, setTitle] = useState("Title");
 	const [pages, setPages] = useState(0);
 	const [author, setAuthor] = useState("Someone");
+
 	const Save = () => {
 		const newBook = {
 			title,
@@ -13,12 +16,13 @@ export default function BookMenu({ setBook, SetLibrary, close }) {
 		};
 
 		setBook(newBook); // update current book
-		SetLibrary((prev) => [...prev, newBook]); // add to library
+		setLibrary((prev) => [...prev, newBook]); // add to library
 		close();
 	};
 
 	const input =
 		"block w-full p-2.5 text-sm text-gray-200 placeholder-gray-400 bg-gray-800 border border-gray-600 rounded-lg transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent";
+
 	return (
 		<div>
 			<span className="block text-center text-2xl font-bold text-gray-100 uppercase tracking-wider">
@@ -46,7 +50,7 @@ export default function BookMenu({ setBook, SetLibrary, close }) {
 					onChange={(e) => setAuthor(e.target.value)}
 				/>
 				<button
-					onClick={() => Save()}
+					onClick={Save}
 					className="font-inter text-sm sm:text-base capitalize font-medium
         px-3 sm:px-4 py-1.5 sm:py-2 bg-[#131823]
         rounded-md border border-[#3B6A99]
