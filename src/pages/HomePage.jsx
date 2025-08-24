@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import Header from "../components/layout/Header";
+import Footer from "../components/layout/Footer";
 import AddBook from "../components/book/AddBook";
 import CurrentlyState from "../components/book/CurrentlyState";
 import PopCard from "../components/book/Popcard";
@@ -20,29 +21,33 @@ function HomePage() {
 	console.log(Library);
 
 	return (
-		<div
-			className="
+		<>
+			<Header />
+			<div
+				className="
         flex flex-col gap-20 items-center mt-10
         w-full max-w-5xl mx-auto
         px-4 sm:px-6
       ">
-			<AddBook onClick={() => Sopen1(true)} />
+				<AddBook onClick={() => Sopen1(true)} />
 
-			<Modal open={open1} onclosefun={() => Sopen1(false)}>
-				<PopCard>
-					<CloseButton onClick={() => Sopen1(false)} />
-					<BookMenu
-						setBook={setBook}
-						SetLibrary={SetLibrary}
-						close={() => Sopen1(false)}
-					/>
-				</PopCard>
-			</Modal>
+				<Modal open={open1} onclosefun={() => Sopen1(false)}>
+					<PopCard>
+						<CloseButton onClick={() => Sopen1(false)} />
+						<BookMenu
+							setBook={setBook}
+							SetLibrary={SetLibrary}
+							close={() => Sopen1(false)}
+						/>
+					</PopCard>
+				</Modal>
 
-			<CurrentlyState book={book} />
+				<CurrentlyState book={book} />
 
-			<TwoGrid />
-		</div>
+				<TwoGrid />
+			</div>
+			<Footer />
+		</>
 	);
 }
 
