@@ -10,21 +10,28 @@ import TwoGrid from "../components/layout/TwoGrid";
 import BookMenu from "../components/book/BookMenu";
 
 function HomePage({ library, setLibrary, book, setBook }) {
-	const [open1, setOpen1] = useState(false);
+	const [open1, setOpen1] = useState(false); // page AddBook button
+	const [open2, setOpen2] = useState(false); // NavBar AddBook button
 
 	return (
 		<>
-			<Header />
+			<Header
+				open2={open2}
+				setOpen2={setOpen2}
+				setBook={setBook}
+				setLibrary={setLibrary}
+			/>
+
 			<div
 				className="
           flex flex-col gap-20 items-center mt-10
           w-full max-w-5xl mx-auto
           px-4 sm:px-6
         ">
-				{/* the add book button */}
+				{/* the add book button (page-level) */}
 				<AddBook onClick={() => setOpen1(true)} />
 
-				{/* modal for adding book */}
+				{/* modal for page add book */}
 				<Modal open={open1} onclosefun={() => setOpen1(false)}>
 					<PopCard>
 						<CloseButton onClick={() => setOpen1(false)} />

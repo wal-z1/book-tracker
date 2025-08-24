@@ -1,12 +1,20 @@
-// src/pages/Library.jsx
+import { useState } from "react";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 import { motion } from "framer-motion";
 
-function Library() {
+function Library({ library, setLibrary, book, setBook }) {
+	const [open2, setOpen2] = useState(false);
+
 	return (
 		<>
-			<Header />
+			<Header
+				open2={open2}
+				setOpen2={setOpen2}
+				setBook={setBook}
+				setLibrary={setLibrary}
+			/>
+
 			<div className="flex flex-col items-center justify-center min-h-[70vh] gap-6 px-6 text-[#F0F6FC] font-outfit">
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}

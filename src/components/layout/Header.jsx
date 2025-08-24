@@ -1,7 +1,7 @@
 import NavBar from "../ui/NavBar";
 import { motion } from "framer-motion";
 
-function Header() {
+function Header({ open2, setOpen2, setBook, setLibrary }) {
 	return (
 		<motion.div
 			initial={{ opacity: 0, y: -12 }}
@@ -24,7 +24,12 @@ function Header() {
         border-b border-b-[#313B4A]/40
         shadow-lg shadow-[#58A6FF]/10
       ">
-			<NavBar />
+			<NavBar
+				open2={open2}
+				setOpen2={setOpen2}
+				setBook={setBook}
+				setLibrary={setLibrary}
+			/>
 		</motion.div>
 	);
 }
