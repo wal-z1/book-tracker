@@ -17,7 +17,6 @@ function NavBar() {
 				<LogoButton />
 
 				<nav className="flex flex-wrap items-center gap-2 sm:gap-3">
-					<Navbutton text="Home" />
 					<Navbutton text="Add Book" />
 					<Navbutton text="Library" />
 					<Navbutton text="Stats" />
