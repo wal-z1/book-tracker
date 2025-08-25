@@ -4,7 +4,7 @@ import { useBookContext } from "../../pages/BookContext";
 export default function BookMenu({ close }) {
 	const { setBook, setLibrary } = useBookContext();
 	const [title, setTitle] = useState("Title");
-	const [pages, setPages] = useState(0);
+	const [pages, setPages] = useState();
 	const [author, setAuthor] = useState("Someone");
 
 	const Save = () => {
