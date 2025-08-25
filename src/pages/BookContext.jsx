@@ -28,7 +28,7 @@ export function BookProvider({ children }) {
 	// modal states
 	const [open1, setOpen1] = useState(false); // page AddBook button
 	const [open2, setOpen2] = useState(false); // NavBar AddBook button
-
+	const [open3, setOpen3] = useState(false); // the book editor button
 	useEffect(() => {
 		localStorage.setItem("library", JSON.stringify(library));
 	}, [library]);
@@ -48,6 +48,8 @@ export function BookProvider({ children }) {
 				setOpen1,
 				open2,
 				setOpen2,
+				open3,
+				setOpen3,
 			}}>
 			{children}
 		</BookContext.Provider>
