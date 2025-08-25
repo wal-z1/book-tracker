@@ -3,28 +3,31 @@ import { useBookContext } from "../../pages/BookContext";
 
 export default function BookMenu({ close }) {
 	const { setBook, setLibrary } = useBookContext();
+
+	// state for input fields
 	const [title, setTitle] = useState("Title");
 	const [pages, setPages] = useState();
 	const [author, setAuthor] = useState("Someone");
 
 	const Save = () => {
 		const newBook = {
-			id: Date.now(), // unique ID
+			id: Date.now(), // quick unique id
 			title,
 			author,
-			currentPage: undefined,
-			totalPages: Number(pages),
-			status: "not started", // new book starts here
-			dateAdded: new Date().toISOString(),
-			dateFinished: null,
-			notes: "",
+			currentPage: undefined, // start blank
+			totalPages: Number(pages), // user sets this
+			status: "not started", // default when added
+			dateAdded: new Date().toISOString(), // when created
+			dateFinished: null, // will set when done
+			notes: "", // user can write later
 		};
 
-		setBook(newBook); // update current book
-		setLibrary((prev) => [...prev, newBook]); // add to library
-		close();
+		setBook(newBook); // update "current" book
+		setLibrary((prev) => [...prev, newBook]); // push to lib array
+		close(); // close modal
 	};
 
+	// reusable input styles
 	const input =
 		"block w-full p-2.5 text-sm text-gray-200 placeholder-gray-400 bg-gray-800 border border-gray-600 rounded-lg transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent";
 
@@ -33,6 +36,8 @@ export default function BookMenu({ close }) {
 			<span className="block text-center text-2xl font-bold text-gray-100 uppercase tracking-wider">
 				add a new book
 			</span>
+
+			{/* form fields */}
 			<div className="mt-3 container flex flex-col gap-5 items-center justify-center">
 				<input
 					className={input}
@@ -54,6 +59,8 @@ export default function BookMenu({ close }) {
 					placeholder="Author..."
 					onChange={(e) => setAuthor(e.target.value)}
 				/>
+
+				{/* save btn */}
 				<button
 					onClick={Save}
 					className="font-inter text-sm sm:text-base capitalize font-medium

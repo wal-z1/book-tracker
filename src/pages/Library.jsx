@@ -6,8 +6,10 @@ import PopCard from "../components/book/Popcard";
 import ModalBook from "../components/ui/ModalBook";
 import CloseButton from "../components/ui/CloseButton";
 import Bookedit from "../components/book/Bookedit";
+import { useState } from "react";
 function Library() {
 	const { library, setOpen3, open3 } = useBookContext();
+	const [SIndex, setSIndex] = useState(null); // to be used later when cliccking
 
 	return (
 		<>
@@ -35,7 +37,8 @@ function Library() {
 									className=" cursor-pointer"
 									onClick={() => {
 										setOpen3(true);
-										console.log(index); /*make sure to pass this to the module*/
+										console.log(index);
+										setSIndex((prev) => index);
 									}}>
 									<div className="p-2 rounded bg-[#0D1117]">
 										<p>
@@ -58,7 +61,7 @@ function Library() {
 						<ModalBook open={open3} onclose={() => setOpen3(false)}>
 							<PopCard>
 								<CloseButton onClick={() => setOpen3(false)} />
-								<Bookedit index={index} />
+								<Bookedit index={SIndex} />
 								{/*import clicked book*/}
 							</PopCard>
 						</ModalBook>
