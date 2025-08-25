@@ -4,35 +4,34 @@ import { useBookContext } from "../../pages/BookContext";
 export default function BookEdit({ index, close }) {
 	const { library, setLibrary, currentbook, setBook } = useBookContext();
 	const bookToEdit = library[index];
+
 	const [title, Settitle] = useState(bookToEdit.title);
 	const [author, Setauthor] = useState(bookToEdit.author);
 	const [status, Setstatus] = useState(bookToEdit.status);
 	const [currentPage, SetcurrentPage] = useState(bookToEdit.currentPage);
 	const [totalPages, SettotalPages] = useState(bookToEdit.totalPages);
 
-	const currentindex = library.indexOf(currentbook);
 	const handleSave = () => {
 		const updatedBook = {
-			...bookToEdit,
-			id: library[index].id,
+			...bookToEdit, 
 			title: title,
 			author: author,
 			status: status,
-			currentPage: currentPage,
-			totalPages: totalPages,
+      //numbers
+			currentPage: Number(currentPage),
+			totalPages: Number(totalPages),
 		};
 
 		const updatedLibrary = library.map((book, i) => {
 			return i === index ? updatedBook : book;
 		});
 		setLibrary(updatedLibrary);
-
-		// check if the edited book is the "currently reading" book.
-		// If it is, you should also update it using `setBook(updatedBook)`.
-		currentindex === index
-			? setBook(updatedBook)
-			: console.log("current not updated");
-		// Close  after saving.
+		
+	
+		if (currentbook.id === updatedBook.id) {
+			setBook(updatedBook);
+		}
+		
 		close();
 	};
 
@@ -54,23 +53,42 @@ export default function BookEdit({ index, close }) {
 				<input
 					className={inputStyles}
 					placeholder="Book title..."
-					// value={...}
-					// onChange={...}
-				/>
-				<input
-					className={inputStyles}
-					type="number"
-					placeholder="Total Pages..."
-					// value={...}
-					// onChange={...}
+					value={title}
+					onChange={(e) => Settitle(e.target.value)}
 				/>
 				<input
 					className={inputStyles}
 					placeholder="Author..."
-					// value={...}
-					// onChange={...}
+					value={author}
+					onChange={(e) => Setauthor(e.target.value)}
 				/>
 
+				<div className="flex gap-4">
+					<input
+						className={inputStyles}
+						type="number"
+						placeholder="Current Page..."
+						value={currentPage}
+						onChange={(e) => SetcurrentPage(e.target.value)}
+					/>
+					<input
+						className={inputStyles}
+						type="number"
+						placeholder="Total Pages..."
+						value={totalPages}
+						onChange={(e) => SettotalPages(e.target.value)}
+					/>
+				</div>
+				
+				<select
+					className={inputStyles}
+					value={status}
+					onChange={(e) => Setstatus(e.target.value)}>
+					<option value="not started">To Read</option>
+					<option value="reading">Reading</option>
+					<option value="finished">Finished</option>
+				</select>
+				
 				<button
 					type="submit"
 					className="font-inter text-base font-medium mt-2
