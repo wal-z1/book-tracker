@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 // Create Context
 const BookContext = createContext();
@@ -7,19 +7,30 @@ const BookContext = createContext();
 export function BookProvider({ children }) {
 	// get saved data on first load
 
-	const currentlibrary = JSON.parse(localStorage.getItem(library) || []);
-	const currentbook = JSON.parse(localStorage.getItem(book) || []);
-	const [library, setLibrary] = useState([]);
-	const [book, setBook] = useState({
-		title: "No Book",
-		author: "Someone",
-		currentPage: 0,
-		totalPages: undefined,
-	});
+	const currentlibrary = JSON.parse(localStorage.getItem("library") || "[]");
+	const currentbook = JSON.parse(
+		localStorage.getItem("book") ||
+			JSON.stringify({
+				title: "No Book",
+				author: "Someone",
+				currentPage: 0,
+				totalPages: undefined,
+			})
+	);
+
+	const [library, setLibrary] = useState(currentlibrary);
+	const [book, setBook] = useState(currentbook);
 
 	// modal states
 	const [open1, setOpen1] = useState(false); // page AddBook button
 	const [open2, setOpen2] = useState(false); // NavBar AddBook button
+
+	useEffect(() => {
+		localStorage.setItem("library", JSON.stringify(library));
+	}, [library]);
+	useEffect(() => {
+		localStorage.setItem("book", JSON.stringify(book));
+	}, [book]);
 
 	return (
 		<BookContext.Provider
