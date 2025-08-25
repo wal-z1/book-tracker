@@ -5,6 +5,7 @@ import { useBookContext } from "./BookContext";
 import PopCard from "../components/book/Popcard";
 import ModalBook from "../components/ui/ModalBook";
 import CloseButton from "../components/ui/CloseButton";
+import Bookedit from "../components/book/Bookedit";
 function Library() {
 	const { library, setOpen3, open3 } = useBookContext();
 
@@ -54,10 +55,8 @@ function Library() {
 						<ModalBook open={open3} onclose={() => setOpen3(false)}>
 							<PopCard>
 								<CloseButton onClick={() => setOpen3(false)} />
-								<h1>hi</h1>
-								{/*<BookMenu close={() => setOpen3(false)} />
-										SHOULD BE REFLECTING THE ACTUAL BOOK EDITING MENU
-								*/}
+								<Bookedit />
+								{/*import clicked book*/}
 							</PopCard>
 						</ModalBook>
 					</div>
