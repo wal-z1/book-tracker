@@ -29,13 +29,13 @@ function Library() {
 					className="flex flex-col w-full rounded-lg border border-[#30363D] bg-[#161B22]/50 relative">
 					<div className="p-4 sm:p-6 relative ">
 						<div className="flex flex-col gap-4 relative ">
-							{library.map((element) => (
+							{library.map((element, index) => (
 								<button
-									key={element.id}
+									key={index}
 									className=" cursor-pointer"
-									onClick={(Event) => {
+									onClick={() => {
 										setOpen3(true);
-										console.log(Event);
+										console.log(index); /*make sure to pass this to the module*/
 									}}>
 									<div className="p-2 rounded bg-[#0D1117]">
 										<p>
