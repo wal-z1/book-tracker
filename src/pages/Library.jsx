@@ -38,7 +38,7 @@ function Library() {
 										<strong>Status:</strong> {element.status}
 									</p>
 									<p>
-										<strong>Progress:</strong> Page {element.currentPage} of
+										<strong>Progress:</strong> Page {element.currentPage} of{" "}
 										{element.totalPages || "N/A"}
 									</p>
 								</div>

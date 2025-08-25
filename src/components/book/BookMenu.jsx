@@ -12,7 +12,7 @@ export default function BookMenu({ close }) {
 			id: Date.now(), // unique ID
 			title,
 			author,
-			currentPage: 0,
+			currentPage: undefined,
 			totalPages: Number(pages),
 			status: "not started", // new book starts here
 			dateAdded: new Date().toISOString(),

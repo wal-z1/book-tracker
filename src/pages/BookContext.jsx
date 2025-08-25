@@ -13,7 +13,7 @@ export function BookProvider({ children }) {
 				id: null,
 				title: "No Book",
 				author: "Someone",
-				currentPage: 0,
+				currentPage: undefined,
 				totalPages: undefined,
 				status: "not started",
 				dateAdded: null,
