@@ -5,6 +5,10 @@ const BookContext = createContext();
 
 // Provider Component
 export function BookProvider({ children }) {
+	// get saved data on first load
+
+	const currentlibrary = JSON.parse(localStorage.getItem(library) || []);
+	const currentbook = JSON.parse(localStorage.getItem(book) || []);
 	const [library, setLibrary] = useState([]);
 	const [book, setBook] = useState({
 		title: "No Book",
