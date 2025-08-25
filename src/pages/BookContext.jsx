@@ -21,6 +21,7 @@ export function BookProvider({ children }) {
 				notes: "",
 			})
 	);
+	/*sets the values from storage*/
 
 	const [library, setLibrary] = useState(currentlibrary);
 	const [book, setBook] = useState(currentbook);
@@ -29,6 +30,7 @@ export function BookProvider({ children }) {
 	const [open1, setOpen1] = useState(false); // page AddBook button
 	const [open2, setOpen2] = useState(false); // NavBar AddBook button
 	const [open3, setOpen3] = useState(false); // the book editor button
+	/*saves on change */
 	useEffect(() => {
 		localStorage.setItem("library", JSON.stringify(library));
 	}, [library]);
