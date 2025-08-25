@@ -10,12 +10,18 @@ export default function BookEdit({ index, close }) {
 	const [currentPage, SetcurrentPage] = useState(Library[index].currentPage);
 	const [totalPages, SettotalPages] = useState(Library[index].totalPages);
 
+	// use state for the object properies so we can update them through the onchange input directly
+
 	const handleSave = () => {
-		//  an `updatedBook` object so we just put it at that index
-		// It should keep the original `id` and `dateAdded` from ` index`,
+		
 
 		const updatedBook = {
 			id: index.id,
+			title: title,
+			author: author,
+			status: status,
+			currentPage: currentPage,
+			totalPages: totalPages,
 			// ...state values here
 		};
 
