@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useBookContext } from "../../pages/BookContext";
+import Library from "../../pages/Library";
 
 export default function BookEdit({ index, close }) {
 	const { library, setLibrary } = useBookContext();
-
+	const [title, Settitle] = useState(Library[index].title);
 	// use state for the object properies so we can update them through the onchange input directly
 
 	const handleSave = () => {
@@ -11,13 +12,12 @@ export default function BookEdit({ index, close }) {
 		// It should keep the original `id` and `dateAdded` from ` index`,
 
 		const updatedBook = {
-			id: index.id, 
+			id: index.id,
 			// ...state values here
 		};
 
-	
 		// the book in the `library` array by its ID and replace it
-		// with  `updatedBook` object. 
+		// with  `updatedBook` object.
 		const updatedLibrary = library.map((book) => {
 			// ... your logic here
 		});
@@ -29,7 +29,6 @@ export default function BookEdit({ index, close }) {
 		// Close  after saving.
 		close();
 	};
-
 
 	const inputStyles =
 		"block w-full p-2.5 text-sm text-gray-200 placeholder-gray-400 bg-gray-800 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500";
@@ -46,7 +45,6 @@ export default function BookEdit({ index, close }) {
 					handleSave();
 				}}
 				className="container flex flex-col gap-4">
-
 				<input
 					className={inputStyles}
 					placeholder="Book title..."
@@ -68,7 +66,7 @@ export default function BookEdit({ index, close }) {
 				/>
 
 				<button
-					type="submit" 
+					type="submit"
 					className="font-inter text-base font-medium mt-2
                                px-4 py-2 bg-[#131823] rounded-md border border-[#3B6A99]
                                text-[#F0F6FC] tracking-wide cursor-pointer
