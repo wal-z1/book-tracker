@@ -1,40 +1,37 @@
 import { useState } from "react";
 import { useBookContext } from "../../pages/BookContext";
-import Library from "../../pages/Library";
 
 export default function BookEdit({ index, close }) {
-	const { library, setLibrary } = useBookContext();
-	const [title, Settitle] = useState(Library[index].title);
-	const [author, Setauthor] = useState(Library[index].author);
-	const [status, Setstatus] = useState(Library[index].status);
-	const [currentPage, SetcurrentPage] = useState(Library[index].currentPage);
-	const [totalPages, SettotalPages] = useState(Library[index].totalPages);
+	const { library, setLibrary, currentbook, setBook } = useBookContext();
+	const bookToEdit = library[index];
+	const [title, Settitle] = useState(bookToEdit.title);
+	const [author, Setauthor] = useState(bookToEdit.author);
+	const [status, Setstatus] = useState(bookToEdit.status);
+	const [currentPage, SetcurrentPage] = useState(bookToEdit.currentPage);
+	const [totalPages, SettotalPages] = useState(bookToEdit.totalPages);
 
-	// use state for the object properies so we can update them through the onchange input directly
-
+	const currentindex = library.indexOf(currentbook);
 	const handleSave = () => {
-		
-
 		const updatedBook = {
-			id: index.id,
+			...bookToEdit,
+			id: library[index].id,
 			title: title,
 			author: author,
 			status: status,
 			currentPage: currentPage,
 			totalPages: totalPages,
-			// ...state values here
 		};
 
-		// the book in the `library` array by its ID and replace it
-		// with  `updatedBook` object.
-		const updatedLibrary = library.map((book) => {
-			// ... your logic here
+		const updatedLibrary = library.map((book, i) => {
+			return i === index ? updatedBook : book;
 		});
 		setLibrary(updatedLibrary);
 
 		// check if the edited book is the "currently reading" book.
 		// If it is, you should also update it using `setBook(updatedBook)`.
-
+		currentindex === index
+			? setBook(updatedBook)
+			: console.log("current not updated");
 		// Close  after saving.
 		close();
 	};

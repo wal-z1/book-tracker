@@ -61,7 +61,7 @@ function Library() {
 						<ModalBook open={open3} onclose={() => setOpen3(false)}>
 							<PopCard>
 								<CloseButton onClick={() => setOpen3(false)} />
-								<Bookedit index={SIndex} />
+								<Bookedit index={SIndex} close={() => setOpen3(false)} />
 								{/*import clicked book*/}
 							</PopCard>
 						</ModalBook>
