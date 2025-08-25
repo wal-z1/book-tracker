@@ -3,7 +3,7 @@ import Footer from "../components/layout/Footer";
 import AddBook from "../components/book/AddBook";
 import CurrentlyState from "../components/book/CurrentlyState";
 import PopCard from "../components/book/Popcard";
-import Modal from "../components/ui/Modal";
+import ModalADD from "../components/ui/ModalADD";
 import CloseButton from "../components/ui/CloseButton";
 import TwoGrid from "../components/layout/TwoGrid";
 import BookMenu from "../components/book/BookMenu";
@@ -26,12 +26,12 @@ function HomePage() {
 				<AddBook onClick={() => setOpen1(true)} />
 
 				{/* modal for page add book */}
-				<Modal open={open1} onclosefun={() => setOpen1(false)}>
+				<ModalADD open={open1} onclosefun={() => setOpen1(false)}>
 					<PopCard>
 						<CloseButton onClick={() => setOpen1(false)} />
 						<BookMenu close={() => setOpen1(false)} />
 					</PopCard>
-				</Modal>
+				</ModalADD>
 
 				{/*
           This groups the "Currently Reading" and the nav links 

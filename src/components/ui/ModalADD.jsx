@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 
-function Modal({ open, onclosefun, children }) {
+function ModalADD({ open, onclosefun, children }) {
 	return (
 		<AnimatePresence>
 			{open && (
@@ -24,4 +24,4 @@ function Modal({ open, onclosefun, children }) {
 	);
 }
 
-export default Modal;
+export default ModalADD;

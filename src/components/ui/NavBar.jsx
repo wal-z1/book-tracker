@@ -2,7 +2,7 @@ import Navbutton from "./NavButton";
 import LogoButton from "./LogoButton";
 import BookMenu from "../book/BookMenu";
 import CloseButton from "../ui/CloseButton";
-import Modal from "../ui/Modal";
+import ModalADD from "./ModalADD";
 import PopCard from "../book/Popcard";
 import { useBookContext } from "../../pages/BookContext";
 import { Link } from "react-router-dom";
@@ -26,7 +26,7 @@ function NavBar() {
 					</button>
 
 					{/* Modal for NavBar add book */}
-					<Modal open={open2} onclosefun={() => setOpen2(false)}>
+					<ModalADD open={open2} onclosefun={() => setOpen2(false)}>
 						<PopCard>
 							<CloseButton onClick={() => setOpen2(false)} />
 							<BookMenu
@@ -35,7 +35,7 @@ function NavBar() {
 								close={() => setOpen2(false)}
 							/>
 						</PopCard>
-					</Modal>
+					</ModalADD>
 					<Link to="/library">
 						<Navbutton text="Library" />
 					</Link>
