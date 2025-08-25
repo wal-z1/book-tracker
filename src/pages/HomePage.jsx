@@ -18,11 +18,11 @@ function HomePage() {
 
 			<div
 				className="
-          flex flex-col gap-20 items-center mt-10
+          flex flex-col items-center mt-10
           w-full max-w-5xl mx-auto
           px-4 sm:px-6
+          gap-12 {/* Reduced the main gap from gap-20 to bring elements closer */}
         ">
-				{/* the add book button (page-level) */}
 				<AddBook onClick={() => setOpen1(true)} />
 
 				{/* modal for page add book */}
@@ -33,11 +33,17 @@ function HomePage() {
 					</PopCard>
 				</Modal>
 
-				{/* show current book */}
-				<CurrentlyState book={book} />
+				{/*
+          This groups the "Currently Reading" and the nav links 
+          into one  block
+        */}
+				<div className="flex flex-col items-center w-full gap-6 p-4 sm:p-6 rounded-lg border border-[#30363D] bg-[#161B22]/50">
+					{/* show current book */}
+					<CurrentlyState book={book} />
 
-				{/* links */}
-				<TwoGrid />
+					{/* links */}
+					<TwoGrid />
+				</div>
 			</div>
 			<Footer />
 		</>
