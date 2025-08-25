@@ -5,7 +5,10 @@ import Library from "../../pages/Library";
 export default function BookEdit({ index, close }) {
 	const { library, setLibrary } = useBookContext();
 	const [title, Settitle] = useState(Library[index].title);
-	// use state for the object properies so we can update them through the onchange input directly
+	const [author, Setauthor] = useState(Library[index].author);
+	const [status, Setstatus] = useState(Library[index].status);
+	const [currentPage, SetcurrentPage] = useState(Library[index].currentPage);
+	const [totalPages, SettotalPages] = useState(Library[index].totalPages);
 
 	const handleSave = () => {
 		//  an `updatedBook` object so we just put it at that index
