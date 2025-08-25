@@ -2,14 +2,13 @@ import { useState } from "react";
 import { useBookContext } from "../../pages/BookContext";
 
 export default function BookMenu({ close }) {
+  /*should have a use state function for the edit book to update the edited book status */
 	const { setBook, setLibrary } = useBookContext();
-	const [title, setTitle] = useState("Title");
-	const [pages, setPages] = useState();
-	const [author, setAuthor] = useState("Someone");
+
 	// save fuction as a const
 	const Save = () => {
-		const newBook = {
-			id: Date.now(), // unique ID
+		const EditedBook = {
+		{/*	id: Date.now(), // unique ID
 			title,
 			author,
 			currentPage: undefined,
@@ -17,11 +16,11 @@ export default function BookMenu({ close }) {
 			status: "not started", // new book starts here
 			dateAdded: new Date().toISOString(),
 			dateFinished: null,
-			notes: "",
+			notes: "",*/}
 		};
-		setBook(newBook); // update current book
-		setLibrary((prev) => [...prev, newBook]); // add to library
-		close();
+		SETEDITEDFUNCTION(newBook); // update current book
+		UPDATE THE LIBRARY IN THAT INDEX FUNCTION(prev) => [...prev, newBook]); // add to library
+		close() /*CLOSE FUNCTION FOR THE MODULE*/;
 	};
 
 	const input =
@@ -32,6 +31,7 @@ export default function BookMenu({ close }) {
 			<span className="block text-center text-2xl font-bold text-gray-100 uppercase tracking-wider">
 				Edit The book
 			</span>
+      {/* UPDATE THE INPUT FORMS*/}
 			<div className="mt-3 container flex flex-col gap-5 items-center justify-center">
 				<input
 					className={input}
