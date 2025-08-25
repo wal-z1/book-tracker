@@ -33,7 +33,10 @@ function Library() {
 								<button
 									key={element.id}
 									className=" cursor-pointer"
-									onClick={() => setOpen3(true)}>
+									onClick={(Event) => {
+										setOpen3(true);
+										console.log(Event);
+									}}>
 									<div className="p-2 rounded bg-[#0D1117]">
 										<p>
 											<strong>Title:</strong> {element.title}
