@@ -13,11 +13,10 @@ export default function BookEdit({ index, close }) {
 
 	const handleSave = () => {
 		const updatedBook = {
-			...bookToEdit, 
+			...bookToEdit,
 			title: title,
 			author: author,
 			status: status,
-      //numbers
 			currentPage: Number(currentPage),
 			totalPages: Number(totalPages),
 		};
@@ -26,13 +25,14 @@ export default function BookEdit({ index, close }) {
 			return i === index ? updatedBook : book;
 		});
 		setLibrary(updatedLibrary);
+
 		
-	
-		if (currentbook.id === updatedBook.id) {
+		// This check is now safe and will not crash if currentbook has no id
+		if (currentbook && currentbook.id === updatedBook.id) {
 			setBook(updatedBook);
 		}
-		
-		close();
+
+		close(); // Now this line will always be reached!
 	};
 
 	const inputStyles =
@@ -44,12 +44,13 @@ export default function BookEdit({ index, close }) {
 				Edit Book
 			</span>
 
+	
 			<form
+				className="container flex flex-col gap-4"
 				onSubmit={(e) => {
-					e.preventDefault();
-					handleSave();
-				}}
-				className="container flex flex-col gap-4">
+					e.preventDefault(); // Prevent page reload
+					handleSave();      // save function
+				}}>
 				<input
 					className={inputStyles}
 					placeholder="Book title..."
@@ -79,7 +80,7 @@ export default function BookEdit({ index, close }) {
 						onChange={(e) => SettotalPages(e.target.value)}
 					/>
 				</div>
-				
+
 				<select
 					className={inputStyles}
 					value={status}
@@ -88,7 +89,8 @@ export default function BookEdit({ index, close }) {
 					<option value="reading">Reading</option>
 					<option value="finished">Finished</option>
 				</select>
-				
+
+				{/*inside a form should have type="submit" */}
 				<button
 					type="submit"
 					className="font-inter text-base font-medium mt-2

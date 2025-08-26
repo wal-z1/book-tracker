@@ -1,6 +1,6 @@
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
-import AddBook from "../components/book/AddBook";
+import AddBook from "../components/book/AddBookButtonMain";
 import CurrentlyState from "../components/book/CurrentlyState";
 import PopCard from "../components/book/Popcard";
 import ModalADD from "../components/ui/ModalADD";
