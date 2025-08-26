@@ -42,7 +42,6 @@ function NavBar() {
 					<Link to="/stats">
 						<Navbutton text="Stats" />
 					</Link>
-					<Navbutton text="Settings" />
 				</nav>
 			</div>
 		</header>

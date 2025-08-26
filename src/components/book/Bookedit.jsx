@@ -26,7 +26,6 @@ export default function BookEdit({ index, close }) {
 		});
 		setLibrary(updatedLibrary);
 
-		
 		// This check is now safe and will not crash if currentbook has no id
 		if (currentbook && currentbook.id === updatedBook.id) {
 			setBook(updatedBook);
@@ -44,12 +43,11 @@ export default function BookEdit({ index, close }) {
 				Edit Book
 			</span>
 
-	
 			<form
 				className="container flex flex-col gap-4"
 				onSubmit={(e) => {
 					e.preventDefault(); // Prevent page reload
-					handleSave();      // save function
+					handleSave(); // save function
 				}}>
 				<input
 					className={inputStyles}
